@@ -1,15 +1,15 @@
-require_relative "../lib/product"
-require_relative "../lib/scraper"
+require_relative '../lib/product'
+require_relative '../lib/scraper'
 require 'tty-prompt'
 require 'tty-progressbar'
 
-def get_category
+def select_category
   prompt = TTY::Prompt.new
-  selected_page = prompt.select("Choose a category to scrape", cycle: true) do |menu|
-    menu.choice "Sweets & Gum", "https://www.sweetcity.co.za/collections/sweets-gums?page="
-    menu.choice "Chocolates", "https://www.sweetcity.co.za/collections/chocolates?page="
-    menu.choice "Snacks & Drinks", "https://www.sweetcity.co.za/collections/essentials?page="
-    menu.choice "Gifts & Novelties", "https://www.sweetcity.co.za/collections/essentials-1?page="
+  selected_page = prompt.select('Choose a category to scrape', cycle: true) do |menu|
+    menu.choice 'Sweets & Gum', 'https://www.sweetcity.co.za/collections/sweets-gums?page='
+    menu.choice 'Chocolates', 'https://www.sweetcity.co.za/collections/chocolates?page='
+    menu.choice 'Snacks & Drinks', 'https://www.sweetcity.co.za/collections/essentials?page='
+    menu.choice 'Gifts & Novelties', 'https://www.sweetcity.co.za/collections/essentials-1?page='
   end
   selected_page
 end
@@ -19,8 +19,8 @@ def add_product(selected_page, page_number)
   arr = []
   product_listing = scraper.doc.css('div.product-card')
   product_listing.each do |product|
-    title = product.css("div.product-card__title").text
-    price = "R" + product.css("span.price-item--regular").text.delete_suffix("\n").split(" ")[-1]
+    title = product.css('div.product-card__title').text
+    price = 'R' + product.css('span.price-item--regular').text.delete_suffix("\n").split(' ')[-1]
     arr << Product.new(title, price)
   end
   arr
@@ -35,19 +35,19 @@ def list_products(products)
   end
 end
 
-selected_page = get_category()
+selected_page = select_category
 
 page_number = 1
 scraper = Scraper.new("#{selected_page}#{page_number}")
-last_page = scraper.doc.css("li.pagination__text").text.split(" ")[-1].to_i
-total_products = scraper.doc.css("span.filters-toolbar__product-count").text.split(" ")[0].to_i
+last_page = scraper.doc.css('li.pagination__text').text.split(' ')[-1].to_i
+total_products = scraper.doc.css('span.filters-toolbar__product-count').text.split(' ')[0].to_i
 products = []
 
-bar = TTY::ProgressBar.new "[:bar] :percent" do |config|
+bar = TTY::ProgressBar.new '[:bar] :percent' do |config|
   config.total = total_products
-  config.width = 30 
-  config.complete = "█"
-  config.head = ""
+  config.width = 30
+  config.complete = '█'
+  config.head = ''
 end
 bar.ratio = 0.1
 

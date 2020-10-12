@@ -1,7 +1,7 @@
 require './lib/scraper'
 
 describe '#initialize?' do
-  scraper = Scraper.new("https://www.google.com")
+  scraper = Scraper.new('https://www.google.com')
 
   it 'checks if the url is parsed into a Tempfile' do
     expect(scraper.instance_variable_get(:@page)).to be_an URI::HTTPS
