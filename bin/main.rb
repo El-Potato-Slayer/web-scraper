@@ -43,8 +43,17 @@ last_page = scraper.doc.css("li.pagination__text").text.split(" ")[-1].to_i
 total_products = scraper.doc.css("span.filters-toolbar__product-count").text.split(" ")[0].to_i
 products = []
 
+bar = TTY::ProgressBar.new "[:bar] :percent" do |config|
+  config.total = total_products
+  config.width = 30 
+  config.complete = "█"
+  config.head = ""
+end
+bar.ratio = 0.1
+
 while page_number <= last_page
   products += add_product(selected_page, page_number)
+  bar.advance((total_products / last_page).to_f.ceil)
   page_number += 1
 end
 
