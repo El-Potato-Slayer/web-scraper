@@ -25,3 +25,27 @@ def add_product(selected_page, page_number)
   end
   arr
 end
+
+def list_products(products)
+  puts "\n\n"
+  counter = 1
+  products.each do |product|
+    puts "#{counter}. Name: #{product.name}\n    Price: #{product.price}\n\n"
+    counter += 1
+  end
+end
+
+selected_page = get_category()
+
+page_number = 1
+scraper = Scraper.new("#{selected_page}#{page_number}")
+last_page = scraper.doc.css("li.pagination__text").text.split(" ")[-1].to_i
+total_products = scraper.doc.css("span.filters-toolbar__product-count").text.split(" ")[0].to_i
+products = []
+
+while page_number <= last_page
+  products += add_product(selected_page, page_number)
+  page_number += 1
+end
+
+list_products(products)
