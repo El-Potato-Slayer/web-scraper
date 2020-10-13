@@ -31,6 +31,17 @@ def list_products(products)
   end
 end
 
+def initialize_progressbar(total)
+  bar = TTY::ProgressBar.new '[:bar] :percent' do |config|
+    config.total = total
+    config.width = 30
+    config.complete = '█'
+    config.head = ''
+  end
+  bar.ratio = 0.1
+  bar
+end
+
 def generate_csv(file, arr)
   CSV.open(file + '.csv', 'w') do |csv|
     arr.each do |item|
@@ -47,17 +58,11 @@ last_page = scraper.doc.css('li.pagination__text').text.split(' ')[-1].to_i
 total_products = scraper.doc.css('span.filters-toolbar__product-count').text.split(' ')[0].to_i
 products = []
 
-bar = TTY::ProgressBar.new '[:bar] :percent' do |config|
-  config.total = total_products
-  config.width = 30
-  config.complete = '█'
-  config.head = ''
-end
-bar.ratio = 0.1
+progress_bar = initialize_progressbar(total_products)
 
 while page_number <= last_page
   products += scraper.add_product(selected_page, page_number.to_s)
-  bar.advance((total_products / last_page).to_f.ceil)
+  progress_bar.advance((total_products / last_page).to_f.ceil)
   page_number += 1
 end
 
