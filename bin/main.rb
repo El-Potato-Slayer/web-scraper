@@ -47,7 +47,7 @@ last_page = scraper.doc.css('li.pagination__text').text.split(' ')[-1].to_i
 total_products = scraper.doc.css('span.filters-toolbar__product-count').text.split(' ')[0].to_i
 products = []
 
-bar = TTY::ProgressBar.new 'loading [:bar] :percent' do |config|
+bar = TTY::ProgressBar.new '[:bar] :percent' do |config|
   config.total = total_products
   config.width = 30
   config.complete = '█'
