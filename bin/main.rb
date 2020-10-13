@@ -73,4 +73,6 @@ if answer
   puts 'Please enter the name of the file (files with the same name will be overwritten): '
   filename = gets.chomp
   generate_csv(filename, products)
+  puts "#{filename}.csv was successfully created\n\n"
 end
+puts "Thank you for you using my program :-)"
