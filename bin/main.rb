@@ -50,7 +50,8 @@ def generate_csv(file, arr)
   end
 end
 
-puts "This program will allow you scrape products from www.sweetcity.co.za\nThe products will be listed, and you will be given an option to save the list to a CSV file.\n\n"
+puts "This program will allow you scrape products from www.sweetcity.co.za
+The products will be listed, and you will be given an option to save the list to a CSV file.\n\n"
 
 selected_page = select_category
 
@@ -77,4 +78,4 @@ if answer
   generate_csv(filename, products)
   puts "#{filename}.csv was successfully created\n\n"
 end
-puts "Thank you for you using my program :-)"
+puts 'Thank you for you using my program :-)'
