@@ -13,16 +13,16 @@ describe '#initialize?' do
 end
 
 describe Scraper do
-  page = "https://www.sweetcity.co.za/collections/essentials-1?page="
+  page = 'https://www.sweetcity.co.za/collections/essentials-1?page='
   scraper = Scraper.new(page)
-  
-  describe "#add_product" do
-    it "checks if items are added to arr" do
-      expect(scraper.add_product(page, "1").count).to be > 0
+
+  describe '#add_product' do
+    it 'checks if items are added to arr' do
+      expect(scraper.add_product(page, '1').count).to be > 0
     end
 
-    it "should return an array" do
-      expect(scraper.add_product(page, "1")).to be_an Array
+    it 'should return an array' do
+      expect(scraper.add_product(page, '1')).to be_an Array
     end
   end
 end

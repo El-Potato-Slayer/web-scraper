@@ -27,12 +27,12 @@ end
 def list_products(products)
   puts "\n\n"
   products.each_with_index do |product, index|
-    puts "#{index+1}. Name: #{product.name}\n    Price: #{product.price}\n\n"
+    puts "#{index + 1}. Name: #{product.name}\n    Price: #{product.price}\n\n"
   end
 end
 
 def generate_csv(file, arr)
-  CSV.open(file + ".csv", "w") do |csv|
+  CSV.open(file + '.csv', 'w') do |csv|
     arr.each do |item|
       csv << [item.name, item.price]
     end
@@ -65,7 +65,7 @@ list_products(products)
 
 answer = prompt_csv
 if answer
-  puts "Please enter the name of the file (files with the same name will be overwritten): "
+  puts 'Please enter the name of the file (files with the same name will be overwritten): '
   filename = gets.chomp
   generate_csv(filename, products)
 end
