@@ -16,13 +16,13 @@
 ### To get a local copy of the repository please run the following commands on your terminal:
 #### With Bundler:
     1. git clone https://github.com/El-Potato-Slayer/web-scraper.git
-    2. cd into cloned directory
+    2. cd into cloned directory by running 'cd web-scraper'
     3. run 'bundle install'
     4. run 'ruby bin/main.rb'
 
 #### With Individual Gems
     1. git clone https://github.com/El-Potato-Slayer/web-scraper.git
-    2. cd into cloned directory
+    2. cd into cloned directory by running 'cd web-scraper'
     3. run 'gem install rubocop'
     4. run 'gem install nokogiri'
     5. run 'gem install rspec'
@@ -33,9 +33,10 @@
 
 ### Usage
     1. With your arrow keys, select one of the products that you would like to scrape with the Enter key
-    2. A list of all the products within that category will be generated
-    3. Select if you would like to generate a CSV file or not
-
+    2. A list of all the products within that category will be displayed
+    3. You will then be asked if you would like to generate a CSV file or not
+    4. If you selected to generate a CSV file, you will be asked to name the file (don't add .csv add the end)
+    5. The CSV file will be generated inside the main directory
 ### Testing
 In order to run the tests for the program, run 'rspec' while in the main directory. All the tests will then proceed to execute.
 
