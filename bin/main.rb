@@ -24,18 +24,6 @@ def prompt_csv
   answer
 end
 
-def add_product(selected_page, page_number)
-  scraper = Scraper.new("#{selected_page}#{page_number}")
-  arr = []
-  product_listing = scraper.doc.css('div.product-card')
-  product_listing.each do |product|
-    title = product.css('div.product-card__title').text
-    price = 'R' + product.css('span.price-item--regular').text.delete_suffix("\n").split(' ')[-1]
-    arr << Product.new(title, price)
-  end
-  arr
-end
-
 def list_products(products)
   puts "\n\n"
   products.each_with_index do |product, index|
@@ -68,17 +56,16 @@ end
 bar.ratio = 0.1
 
 while page_number <= last_page
-  products += add_product(selected_page, page_number)
+  products += scraper.add_product(selected_page, page_number.to_s)
   bar.advance((total_products / last_page).to_f.ceil)
   page_number += 1
 end
 
 list_products(products)
 
-answer = prompt_csv()
+answer = prompt_csv
 if answer
   puts "Please enter the name of the file (files with the same name will be overwritten): "
   filename = gets.chomp
   generate_csv(filename, products)
 end
-
