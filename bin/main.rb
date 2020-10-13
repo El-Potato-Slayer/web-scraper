@@ -50,6 +50,8 @@ def generate_csv(file, arr)
   end
 end
 
+puts "This program will allow you scrape products from www.sweetcity.co.za\nThe products will be listed, and you will be given an option to save the list to a CSV file.\n\n"
+
 selected_page = select_category
 
 page_number = 1
