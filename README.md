@@ -1,6 +1,6 @@
 
 # Ruby: Web Scraper
-> This is a web scraper built to scrape the products from [SweetCity](https://www/sweetcity.co.za). A menu is displayed in which the user has to select one of the four different product categories. After a category is selected, a list of all the products in the selected category will be displayed, and the user will be given an option to export the list to a CSV file.  
+> This is a web scraper built to scrape the products from [SweetCity](https://www/sweetcity.co.za). A menu is displayed in which the user has to select one of the four different product categories. After a category is selected, a list of all the products in the selected category will be displayed, and the user will be given an option to export the list to a CSV file. 
 
 ## Built With
 
@@ -8,17 +8,28 @@
 
 ## Features
 - Has a menu system
-- Allows to scrap data from all the different categories
+- Allows user to scrap products from all the different categories
 - Exports the data to CSV
 
 ## Getting Started
 
 ### To get a local copy of the repository please run the following commands on your terminal:
-
+#### With Bundler:
     1. git clone https://github.com/El-Potato-Slayer/web-scraper.git
     2. cd into cloned directory
     3. run 'bundle install'
-    4. run ruby bin/main.rb
+    4. run 'ruby bin/main.rb'
+
+#### With Individual Gems
+    1. git clone https://github.com/El-Potato-Slayer/web-scraper.git
+    2. cd into cloned directory
+    3. run 'gem install rubocop'
+    4. run 'gem install nokogiri'
+    5. run 'gem install rspec'
+    6. run 'gem install tty-progressbar'
+    7. run 'gem install tty-prompt'
+    8. run 'ruby bin/main.rb'
+    
 
 ### Usage
     1. With your arrow keys, select one of the products that you would like to scrape with the Enter key
