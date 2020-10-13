@@ -2,7 +2,6 @@ GEM
   remote: https://rubygems.org/
   specs:
     ast (2.4.1)
-    csv (3.0.9)
     diff-lcs (1.4.4)
     mini_portile2 (2.4.0)
     nokogiri (1.10.10-x64-mingw32)
@@ -63,7 +62,6 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
-  csv
   nokogiri
   rspec
   rubocop
