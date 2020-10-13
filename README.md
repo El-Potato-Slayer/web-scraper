@@ -1,6 +1,6 @@
 
-# Ruby: Enumerable methods
-> This is a scraper built which South Africans can use to export a list of candies and other products from [SweetCity](https://www/sweetcity.co.za)
+# Ruby: Web Scraper
+> This is web scraper was built to scrape the products from [SweetCity](https://www/sweetcity.co.za). A menu is displayed in which the user has to select one of the four different product categories. After a category is selected, a list of all the products in the selected category will be displayed, and the user will be given an option to export the list to a CSV file.  
 
 ## Built With
 
