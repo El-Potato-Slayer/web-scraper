@@ -31,12 +31,50 @@
     8. run 'ruby bin/main.rb'
     
 
-### Usage
-    1. With your arrow keys, select one of the products that you would like to scrape with the Enter key
-    2. A list of all the products within that category will be displayed
-    3. You will then be asked if you would like to generate a CSV file or not
-    4. If you selected to generate a CSV file, you will be asked to name the file (don't add .csv add the end)
-    5. The CSV file will be generated inside the main directory
+## Usage
+While inside the main directory, run:
+
+    ruby bin/main.rb
+    
+You will be presented with a menu of the four main product categories. Using your arrow keys, select one of the available options and press Enter.
+
+    > Sweet & Gum
+      Chocolates
+      Snacks & Drinks
+      Gifts & Novelties
+     
+Once selected, the scraper might take a moment to fetch the data. This will be indicated by the progress-bar.
+
+    [██████████████████           ] 67%
+    
+A list of all the products within the selected category will be displayed
+
+    1. Name: 20-Flavor Jelly Bean Gift Box 240g
+       Price: R175.00
+       
+    2. Name: Airheads Extreme Sour 57g
+       Price: R35.00
+    ...
+    
+Afterwards, you will be asked if you would like to have a CSV file of the products generated. Using your arrow keys, select an option and press Enter.
+
+    Would you like to save the list to a csv file?
+    > Yes
+      No
+      
+If you select no, the program will end. If you select yes, you will be asked to give the file a name.
+
+    Please enter the name of the file (files with the same name will be overwritten):
+    FileName
+    
+You will then be notified that the file was successfully created
+
+    FileName.csv was successfully created
+    
+Afterwards, you will be thanked for using the program and the program will end
+
+    Thank you for you using my program :-)
+    
 ### Testing
 In order to run the tests for the program, run 'rspec' while in the main directory. All the tests will then proceed to execute.
 
