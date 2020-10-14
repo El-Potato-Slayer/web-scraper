@@ -2,7 +2,7 @@ require 'Nokogiri'
 require 'open-uri'
 
 class Scraper
-  attr_reader :page, :doc
+  attr_reader :doc
 
   def initialize(page_url)
     @page = URI.parse(page_url)
