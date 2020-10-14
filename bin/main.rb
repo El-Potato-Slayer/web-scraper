@@ -32,7 +32,7 @@ def list_products(products)
 end
 
 def initialize_progressbar(total)
-  bar = TTY::ProgressBar.new 'Loading [:bar] :percent' do |config|
+  bar = TTY::ProgressBar.new '[:bar] :percent' do |config|
     config.total = total
     config.width = 30
     config.complete = '█'
