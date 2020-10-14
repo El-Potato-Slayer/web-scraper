@@ -2,6 +2,8 @@
 # Ruby: Web Scraper
 > This is a web scraper built to scrape the products from [SweetCity](https://www/sweetcity.co.za). A menu is displayed in which the user has to select one of the four different product categories. After a category is selected, a list of all the products in the selected category will be displayed, and the user will be given an option to export the list to a CSV file. 
 
+![image](https://user-images.githubusercontent.com/43865875/95991741-6e31b280-0e2d-11eb-8b6c-ddf249e299c9.png)
+
 ## Built With
 
 - Ruby
