@@ -1,4 +1,4 @@
-require_relative './lib/scraper'
+require_relative '../lib/scraper'
 
 describe '#initialize?' do
   scraper = Scraper.new('https://www.google.com')

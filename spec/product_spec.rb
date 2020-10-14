@@ -1,4 +1,4 @@
-require_relative './lib/product'
+require_relative '../lib/product'
 
 describe '#initialize?' do
   product = Product.new('Swagger Bagger', '$15000')
